@@ -25,6 +25,4 @@ python main.py
 
 This project is licensed under the [GNU General Public License (GPL)](LICENSE.md).
 
-## Author
-
-Armen-Jean Andreasian [https://github.com/Armen-Jean-Andreasian]
+## Author: [Armen-Jean Andreasian](https://github.com/Armen-Jean-Andreasian)
