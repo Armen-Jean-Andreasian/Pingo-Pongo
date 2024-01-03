@@ -1,5 +1,6 @@
 import pygame
 from .settings import Config
+from images import BALL_IMAGE
 
 
 class DisplayMessageOnScreen:
@@ -32,11 +33,15 @@ class ScreenBase:
     def __init__(self, game_name):
         self.screen = pygame.display.set_mode((Config.WIDTH, Config.HEIGHT))
         self.font = pygame.font.Font(None, 36)
+        # game name : Pingo-pongo
         pygame.display.set_caption(game_name)
+        # game window logo : Ball from images
+        icon_image = pygame.image.load(BALL_IMAGE)
+        pygame.display.set_icon(icon_image)
         self.clock = pygame.time.Clock()
 
     def display_text(self, static_text: str, dynamic_text: str | int | float,
-                     color: tuple[int], dest: tuple[int, int], antialias: bool = True):
+                     color: tuple[int], dest: tuple[int, int], antialias: bool = True) -> None:
         text = f"{static_text}: {dynamic_text}"
 
         text_to_display = self.font.render(text, antialias, color)

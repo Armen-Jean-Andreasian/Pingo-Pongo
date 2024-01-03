@@ -5,7 +5,7 @@ from src.settings import Config
 
 class Game:
     score = 0
-    ball_speed_multiplier = 3
+    ball_speed_multiplier = 1.2
 
     def __init__(self, wall_width, ball_speed):
         self.wall_width = wall_width

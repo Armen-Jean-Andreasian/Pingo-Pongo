@@ -1,0 +1,35 @@
+GNU GENERAL PUBLIC LICENSE
+Version 3, 29 June 2007
+
+# Pingo-Pongo - GPL License
+
+Pingo-Pongo is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Pingo-Pongo is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Pingo-Pongo.  If not, see <https://www.gnu.org/licenses/>.
+
+## Additional Terms
+
+### Attribution
+
+If your project uses or is based on Pingo-Pongo, you **are required** to provide attribution by mentioning the original author, Armen-Jean Andreasian, and include a link to the project's GitHub repository.
+
+### Share Alike
+
+If you modify, transform, or build upon Pingo-Pongo, you **must** distribute the resulting work only under the same license as this one.
+
+### Original License
+
+When redistributing or including Pingo-Pongo or derivative works, you **must** include the original copy of this license in your project.
+
+## Contact
+
+For any questions or inquiries regarding the GPL license or the Pingo-Pongo project, please contact Armen-Jean Andreasian.
