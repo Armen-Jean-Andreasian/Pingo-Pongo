@@ -28,5 +28,7 @@ while True:
         ('images', (ball_obj,))
     )
     screen.update(figures=figures, score=game.score, speed=game.current_ball_speed,
-                  speed_multiplier=game.ball_speed_multiplier)
+                  speed_multiplier=game.ball_speed_multiplier, game_over_status=game.is_game_over(),
+                  player_won_status=game.is_win())
+
     screen.tick_fps(Config.FPS_COUNT)
