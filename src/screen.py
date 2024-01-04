@@ -1,6 +1,7 @@
 import pygame
 from .settings import Config
 from images import BALL_IMAGE
+from .player_data import BestScore
 
 
 class DisplayMessageOnScreen:
@@ -39,6 +40,8 @@ class ScreenBase:
         icon_image = pygame.image.load(BALL_IMAGE)
         pygame.display.set_icon(icon_image)
         self.clock = pygame.time.Clock()
+        # best score
+        self.best_score_obj = BestScore()
 
     def display_text(self, static_text: str, dynamic_text: str | int | float,
                      color: tuple[int], dest: tuple[int, int], antialias: bool = True) -> None:
@@ -69,6 +72,11 @@ class Screen(ScreenBase):
         # Score Text
         self.display_text(static_text="Score", dynamic_text=score, color=Config.WHITE, dest=(20, 20))
 
+        # Best score Text
+        self.display_text(static_text="Best score", dynamic_text=self.best_score_obj.current_best_score,
+                          color=Config.WHITE, dest=(650, 40))
+
+
         # Multiplier Text
         self.display_text(static_text="Multiplier", dynamic_text=speed_multiplier, color=Config.WHITE,
                           dest=(310, 20))
@@ -76,11 +84,15 @@ class Screen(ScreenBase):
         # Speed Text
         self.display_text(static_text="Speed", dynamic_text=speed, color=Config.WHITE, dest=(650, 20))
 
+
+
         if game_over_status:
+            self.best_score_obj.save_new_best_score(new_score=score)
             self.screen.fill(Config.BLACK)
             GameOverScreen().show(font=self.font, screen=self.screen)
 
         if player_won_status:
+            self.best_score_obj.save_new_best_score(new_score=score)
             self.screen.fill(Config.BLACK)
             YouWonScreen().show(font=self.font, screen=self.screen)
 
