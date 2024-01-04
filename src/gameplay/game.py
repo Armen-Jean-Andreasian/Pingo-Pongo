@@ -1,6 +1,8 @@
-import pygame
 import sys
-from src.settings import Config
+
+import pygame
+
+from src import Config
 
 
 class Game:

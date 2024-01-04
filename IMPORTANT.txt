@@ -1,0 +1,3 @@
+To switch Redis to manual database, open
+    src/database/__init__.py
+    and import the database you wish as DataBase

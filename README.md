@@ -10,7 +10,7 @@ Pingo-Pongo is a classic arcade-style game that combines elements of ping pong a
 
 Include screenshots or GIFs showcasing different aspects of your game.
 
-![Gameplay Screenshot](screenshots/gameplay.png)
+![Gameplay Screenshot](assets/screenshots/gameplay.png)
 
 ---
 ## Installation
@@ -25,7 +25,7 @@ python main.py
 ## Additional information
 By default, the database is `Redis 5.0.14.1`, so to use the game you may need to download Redis on your computer.
 [Download for Windows](https://github.com/tporadowski/redis/releases/tag/v5.0.14.1)
-Alternatively, you can choose another DB by modifying `database.py` 
+Alternatively, you can choose another DB by modifying `redisdatabase.py` 
 ---
 ## License
 

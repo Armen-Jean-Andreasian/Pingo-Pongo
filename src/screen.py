@@ -1,7 +1,7 @@
 import pygame
+from assets.images import BALL_IMAGE
 from .settings import Config
-from images import BALL_IMAGE
-from .player_data import BestScore
+from src.data.player_data import UserBestScore
 
 
 class DisplayMessageOnScreen:
@@ -41,7 +41,7 @@ class ScreenBase:
         pygame.display.set_icon(icon_image)
         self.clock = pygame.time.Clock()
         # best score
-        self.best_score_obj = BestScore()
+        self.best_score_obj = UserBestScore()
 
     def display_text(self, static_text: str, dynamic_text: str | int | float,
                      color: tuple[int], dest: tuple[int, int], antialias: bool = True) -> None:
@@ -74,11 +74,11 @@ class Screen(ScreenBase):
 
         # Best score Text
         self.display_text(static_text="Best score", dynamic_text=self.best_score_obj.current_best_score,
-                          color=Config.WHITE, dest=(650, 40))
+                          color=Config.WHITE, dest=(20, 40))
 
 
         # Multiplier Text
-        self.display_text(static_text="Multiplier", dynamic_text=speed_multiplier, color=Config.WHITE,
+        self.display_text(static_text="Speed Multiplier", dynamic_text=speed_multiplier, color=Config.WHITE,
                           dest=(310, 20))
 
         # Speed Text
