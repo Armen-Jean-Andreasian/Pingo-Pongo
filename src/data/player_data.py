@@ -1,24 +1,35 @@
-from src.database import BestScore
+import json
+
+
+class Database:
+    db_path = 'src/data/database.json'
+    key = "best_score"
+
+    @classmethod
+    def get_score(cls):
+        with open(cls.db_path, "r") as jsonfile:
+            content: dict = json.load(jsonfile)
+            return content.get(cls.key, 0)
+
+    @classmethod
+    def update_score(cls, new_score):
+        with open(cls.db_path, "w") as jsonfile:
+            json.dump({cls.key: new_score}, jsonfile, indent=2)
+        return None
 
 
 class UserBestScore:
-    def __init__(self):
-        self.variable_name = 'best_score'
-        self.current_best_score = self.get_best_score()
+    __slots__ = ['current_best_score']
 
+    def __init__(self):
+        self.current_best_score = Database.get_score()
 
     def get_best_score(self) -> float:
-        """Returns the best user score so far"""
-        try:
-            return BestScore().get_best_score()
-        except ValueError:
-            # if it's not found set 0 to database and return it
-            self.current_best_score = 0
-            BestScore().save_new_best_score(new_score=self.current_best_score)
-            return self.current_best_score
+        return self.current_best_score
 
     def save_new_best_score(self, new_score):
         if new_score > self.current_best_score:
-            BestScore().save_new_best_score(new_score=self.current_best_score)
-
+            Database.update_score(new_score)
+            self.current_best_score = new_score
+        return self
 

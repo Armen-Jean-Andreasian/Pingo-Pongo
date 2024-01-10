@@ -1,4 +1,3 @@
-# see IMPORTANT.txt before you run
 import pygame
 from src import Game, Config, Screen, Controls, Ball, Slider, WallTop
 
